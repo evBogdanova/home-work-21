@@ -11,19 +11,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 
+import javax.annotation.Nonnull;
+
 import static config.ProjectData.*;
 
 public class AndroidMobileDriver implements WebDriverProvider {
 
+    @Nonnull
     @Override
-    public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
+    public WebDriver createDriver(@Nonnull DesiredCapabilities desiredCapabilities) {
         if (ProjectData.deviceHost().equals(DeviceHost.BROWSERSTACK))
             return getBrowserstackMobileDriver(desiredCapabilities);
         else
             return getAppiumMobileDriver(desiredCapabilities);
     }
 
-    public AndroidDriver<WebElement> getAppiumMobileDriver(DesiredCapabilities desiredCapabilities) {
+    public AndroidDriver<WebElement> getAppiumMobileDriver(@Nonnull DesiredCapabilities desiredCapabilities) {
         desiredCapabilities.setCapability("platformName", appiumConfig.platformName());
         desiredCapabilities.setCapability("deviceName", appiumConfig.deviceName());
         desiredCapabilities.setCapability("version", appiumConfig.version());
