@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import pages.HeaderText;
 
 @DisplayName("Проверка приложения 'Википедия'")
-public class HeaderTextTest {
+public class HeaderTextTest extends TestBase{
 
     @Test
     @DisplayName("Проверка заголовков приложения 'Википедия'")
