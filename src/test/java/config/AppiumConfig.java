@@ -9,8 +9,8 @@ import static org.aeonbits.owner.Config.LoadType.MERGE;
 @Config.LoadPolicy(MERGE)
 @Config.Sources({
         "system:properties",
-        "classpath:config/${device.host}.properties",
-        "classpath:config/local.properties"
+        "classpath:${device.host}.properties",
+        "classpath:local.properties"
 })
 public interface AppiumConfig extends Config {
 
