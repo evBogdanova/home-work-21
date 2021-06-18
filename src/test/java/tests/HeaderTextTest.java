@@ -3,6 +3,7 @@ package tests;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.HeaderText;
+import pages.WikipediaSteps;
 
 @DisplayName("Проверка приложения 'Википедия'")
 public class HeaderTextTest extends TestBase{

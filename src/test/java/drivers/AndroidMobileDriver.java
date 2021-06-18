@@ -4,12 +4,11 @@ import com.codeborne.selenide.WebDriverProvider;
 import config.DeviceHost;
 import config.ProjectData;
 import helpers.AppiumHelper;
-import helpers.BrowserstackHelper;
+import helpers.BrowserStackHelper;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
 
 import javax.annotation.Nonnull;
 
@@ -50,13 +49,13 @@ public class AndroidMobileDriver implements WebDriverProvider {
 
         desiredCapabilities.setCapability("project", "qa_guru_21");
         desiredCapabilities.setCapability("build", "Android");
-        desiredCapabilities.setCapability("name", "WikiMobileTests");
+        desiredCapabilities.setCapability("name", "Wiki tests");
         desiredCapabilities.setCapability("autoGrantPermissions", "true");
 
         desiredCapabilities.setCapability("device", browserstackConfig.device());
         desiredCapabilities.setCapability("os_version", browserstackConfig.osVersion());
         desiredCapabilities.setCapability("app", browserstackConfig.app());
 
-        return new AndroidDriver<>(BrowserstackHelper.getBrowserstackUrl(), desiredCapabilities);
+        return new AndroidDriver<>(BrowserStackHelper.getBrowserstackUrl(), desiredCapabilities);
     }
 }

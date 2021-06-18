@@ -1,9 +1,8 @@
-package tests;
+package pages;
 
 import com.codeborne.selenide.Condition;
 import io.appium.java_client.MobileBy;
 import io.qameta.allure.Step;
-import pages.HeaderText;
 
 import static com.codeborne.selenide.Selenide.$;
 

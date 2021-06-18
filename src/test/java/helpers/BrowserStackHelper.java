@@ -7,8 +7,7 @@ import java.net.URL;
 import static config.ProjectData.browserstackConfig;
 import static io.restassured.RestAssured.given;
 
-
-public class BrowserstackHelper {
+public class BrowserStackHelper {
 
     public static URL getBrowserstackUrl() {
         try {
