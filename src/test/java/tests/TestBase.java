@@ -16,7 +16,6 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static helpers.AttachmentHelper.getSessionId;
 
-
 public class TestBase {
 
     @BeforeAll

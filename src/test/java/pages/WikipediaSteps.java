@@ -10,7 +10,7 @@ public class WikipediaSteps {
 
     @Step("Нажать на кнопку 'Continue'")
         public WikipediaSteps clickContinueButton() {
-        $(MobileBy.className("android.widget.Button")).click();
+        $(MobileBy.className("android.widget.Button"), 1).click();
         return this;
     }
 

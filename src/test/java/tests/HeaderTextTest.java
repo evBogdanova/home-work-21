@@ -6,7 +6,7 @@ import pages.HeaderText;
 import pages.WikipediaSteps;
 
 @DisplayName("Проверка приложения 'Википедия'")
-public class HeaderTextTest extends TestBase{
+public class HeaderTextTest extends TestBase {
 
     @Test
     @DisplayName("Проверка заголовков приложения 'Википедия'")
