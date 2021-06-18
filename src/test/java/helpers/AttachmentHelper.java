@@ -9,7 +9,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static config.ProjectData.deviceHost;
 
-public class AttachHelper {
+public class AttachmentHelper {
 
     @Attachment(value = "{attachName}", type = "text/plain")
     public static String attachAsText(String attachName, String message) {
@@ -30,7 +30,7 @@ public class AttachHelper {
 
     private static String getVideoUrl(String sessionId) {
         if (deviceHost().equals(DeviceHost.BROWSERSTACK)) {
-            return BrowserStackHelper.getBrowserstackVideoUrl(sessionId);
+            return BrowserstackHelper.getBrowserstackVideoUrl(sessionId);
         } else if (deviceHost().equals(DeviceHost.SELENOID)) {
             return AppiumHelper.getSelenoidVideoUrl(sessionId);
         }

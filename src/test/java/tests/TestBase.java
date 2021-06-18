@@ -4,8 +4,8 @@ import com.codeborne.selenide.Configuration;
 import config.DeviceHost;
 import config.ProjectData;
 import drivers.AndroidMobileDriver;
-import helpers.AttachHelper;
-import helpers.BrowserStackHelper;
+import helpers.AttachmentHelper;
+import helpers.BrowserstackHelper;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -14,7 +14,7 @@ import org.junit.jupiter.api.BeforeEach;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
-import static helpers.AttachHelper.getSessionId;
+import static helpers.AttachmentHelper.getSessionId;
 
 
 public class TestBase {
@@ -36,14 +36,14 @@ public class TestBase {
 
     @AfterEach
     public void afterEach() {
-        AttachHelper.screenshotAs("Last screenshot");
+        AttachmentHelper.screenshotAs("Last screenshot");
 
         if (!ProjectData.deviceHost().equals(DeviceHost.EMULATION)) {
             String sessionId = getSessionId();
-            AttachHelper.attachVideo(sessionId);
+            AttachmentHelper.attachVideo(sessionId);
             if (ProjectData.deviceHost().equals(DeviceHost.BROWSERSTACK))
-                AttachHelper.attachAsText("Browserstack build link",
-                        BrowserStackHelper.getBSPublicLink(sessionId));
+                AttachmentHelper.attachAsText("Browserstack build link",
+                        BrowserstackHelper.getBSPublicLink(sessionId));
         }
 
         closeWebDriver();

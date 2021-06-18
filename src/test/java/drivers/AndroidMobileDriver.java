@@ -4,7 +4,7 @@ import com.codeborne.selenide.WebDriverProvider;
 import config.DeviceHost;
 import config.ProjectData;
 import helpers.AppiumHelper;
-import helpers.BrowserStackHelper;
+import helpers.BrowserstackHelper;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -56,6 +56,6 @@ public class AndroidMobileDriver implements WebDriverProvider {
         desiredCapabilities.setCapability("os_version", browserstackConfig.osVersion());
         desiredCapabilities.setCapability("app", browserstackConfig.app());
 
-        return new AndroidDriver<>(BrowserStackHelper.getBrowserstackUrl(), desiredCapabilities);
+        return new AndroidDriver<>(BrowserstackHelper.getBrowserstackUrl(), desiredCapabilities);
     }
 }
