@@ -45,6 +45,9 @@ public class AndroidMobileDriver implements WebDriverProvider {
     }
 
     public AndroidDriver<WebElement> getBrowserstackMobileDriver(DesiredCapabilities desiredCapabilities) {
+        desiredCapabilities.setCapability("browserstack.user", "evgeniyabogdanov_M9GHfw");
+        desiredCapabilities.setCapability("browserstack.key", "xEWg3LQyXHLLwC5uPwst");
+
         desiredCapabilities.setCapability("project", "qa_guru_21");
         desiredCapabilities.setCapability("build", "Android");
         desiredCapabilities.setCapability("name", "WikiMobileTests");

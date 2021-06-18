@@ -15,13 +15,13 @@ import static org.aeonbits.owner.Config.LoadType.MERGE;
 public interface AppiumConfig extends Config {
 
     @Key("selenoid.url")
-    String appiumServerUrl();
+    String selenoidUrl();
 
     @Key("selenoid.user")
-    String appiumServerUser();
+    String selenoidUser();
 
     @Key("selenoid.password")
-    String appiumServerPassword();
+    String selenoidPassword();
 
     @Key("video.storage")
     String videoStorage();

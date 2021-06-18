@@ -11,10 +11,10 @@ public class AppiumHelper {
 
     public static URL getAppiumServerUrl() {
         try {
-            return new URL(isCredentials() ? String.format(appiumConfig.appiumServerUrl(),
-                    appiumConfig.appiumServerUser(),
-                    appiumConfig.appiumServerPassword()) :
-                    appiumConfig.appiumServerUrl());
+            return new URL(isCredentials() ? String.format(appiumConfig.selenoidUrl(),
+                    appiumConfig.selenoidUser(),
+                    appiumConfig.selenoidPassword()) :
+                    appiumConfig.selenoidUrl());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
@@ -24,8 +24,8 @@ public class AppiumHelper {
      * Credentials are not used for local launch
      */
     public static boolean isCredentials() {
-        return appiumConfig.appiumServerPassword() != null && appiumConfig.appiumServerUser() != null &&
-                !appiumConfig.appiumServerPassword().equals("") && !appiumConfig.appiumServerUser().equals("");
+        return appiumConfig.selenoidPassword() != null && appiumConfig.selenoidUser() != null &&
+                !appiumConfig.selenoidPassword().equals("") && !appiumConfig.selenoidUser().equals("");
     }
 
     public static String getSelenoidVideoUrl(String sessionId) {
